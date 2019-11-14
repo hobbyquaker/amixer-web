@@ -31,6 +31,23 @@ Options:
 
 ![](screenshot.png)
 
+#### Example `/etc/systemd/system/amixer-web.service`
+
+```
+[Unit]
+Description=amixer web frontend
+After=network.target
+
+[Service]
+Type=simple
+User=shairport-sync
+ExecStart=/usr/local/bin/amixer-web
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
 ## License
 
 Copyright 2019 Sebastian Raff
