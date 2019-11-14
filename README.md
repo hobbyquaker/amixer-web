@@ -18,6 +18,8 @@
 ## Usage
 
 ```
+Usage: amixer-web [options]
+
 Options:
   --version     Show version number                                    [boolean]
   --help        Show help                                              [boolean]
