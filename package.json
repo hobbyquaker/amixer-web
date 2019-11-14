@@ -1,0 +1,44 @@
+{
+  "name": "amixer-web",
+  "version": "1.0.0",
+  "description": "alsa mixer web frontend",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "xo",
+    "lintfix": "xo --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hobbyquaker/amixer-web.git"
+  },
+  "keywords": [
+    "alsamixer",
+    "amixer",
+    "equalizer",
+    "audio",
+    "volume",
+    "web",
+    "frontend",
+    "ui"
+  ],
+  "author": "Sebastian Raff <hobbyquaker@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hobbyquaker/amixer-web/issues"
+  },
+  "homepage": "https://github.com/hobbyquaker/amixer-web#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "xo": "^0.25.3"
+  },
+  "xo": {
+    "space": 4,
+    "rules": {
+      "import/order": "warn"
+    }
+  }
+}

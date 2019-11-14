@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-container>
+            <v-row>
+                <v-col v-for="mixer in mixers" v-bind:key="mixer.num">
+                    <v-slider @change="change(mixer.name, mixer.left)" vertical v-model="mixer.left"></v-slider>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col v-for="mixer in mixers" v-bind:key="mixer.num">
+                    <div style="text-align: center">{{mixer.left}}% <!--{{mixer.right}}%--></div>
+                    <div style="text-align: center">{{mixer.shortname}}</div>
+                </v-col>
+            </v-row>
+        </v-container>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data: {
+            mixers: []
+        },
+        methods: {
+            change: function (name, value) {
+                window.fetch(`sset?name=${encodeURIComponent(name)}&left=${value}&right=${value}`);
+            }
+        }
+    });
+    window.fetch('scontents').then(res => res.json()).then(data => {
+        console.log(data);
+        vm.mixers = data;
+    });
+
+</script>
+<template>
+
+</template>
+</body>
+</html>
