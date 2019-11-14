@@ -1,6 +1,6 @@
 {
   "name": "amixer-web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "alsa mixer web frontend",
   "main": "index.js",
   "bin": "index.js",
@@ -38,7 +38,8 @@
   "xo": {
     "space": 4,
     "rules": {
-      "import/order": "warn"
+      "import/order": "warn",
+      "no-path-concat": "warn"
     }
   }
 }
