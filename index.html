@@ -35,7 +35,11 @@
 <script>
     const vm = new Vue({
         el: '#app',
-        vuetify: new Vuetify(),
+        vuetify: new Vuetify({
+            theme: {
+                dark: true
+            }
+        }),
         data: {
             mixers: []
         },
